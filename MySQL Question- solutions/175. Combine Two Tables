@@ -1,0 +1,3 @@
+Select firstName,lastName,city,state from Person as A
+Left join Address as B
+on A.personId=B.personId;
