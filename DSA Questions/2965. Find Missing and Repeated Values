@@ -1,0 +1,36 @@
+class Solution {
+public:
+    vector<int> findMissingAndRepeatedValues(vector<vector<int>>& grid) {
+        vector<int>v;
+        vector<int>v1;
+        for(int i=0;i<grid.size();i++){
+            for(int j=0;j<grid[i].size();j++){
+                v.push_back(grid[i][j]);
+            }
+        }
+
+        sort(v.begin(),v.end());
+        int n=grid.size(),missing=0,duplicate=0,a,b,num;
+        for(int i=0;i<v.size()-1;i++){
+            if(v[i]==v[i+1]){
+                v1.push_back(v[i]);
+                break;
+            }
+        }
+
+        for(int i=1;i<=(n*n);i++){
+            missing=0;
+            for(int j=0;j<v.size();j++){
+                if(i==v[j]){
+                    missing=1;
+                    break;
+                }
+            }
+            if(missing==0){
+                v1.push_back(i);
+                break;
+            }
+        }
+        return v1;
+    }
+};
