@@ -1,0 +1,41 @@
+class Solution {
+public:
+    int dominantIndex(vector<int>& nums) {
+        vector<int>v;
+        for(int i=0;i<nums.size();i++){
+            v.push_back(nums[i]);
+        }
+
+        sort(v.begin(),v.end());
+        int num,flag=0,index;
+        if(v[v.size()-1]!=v[v.size()-2]){
+            flag=1;
+            num=v[v.size()-1];
+        }
+        if(flag==0){
+            for(int i=v.size()-1;i>=0;i--){
+                if(v[i]!=v[i-1]){
+                    num=v[i-1];
+                    return -1;
+                }
+            }
+        }
+
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]!=num){
+                if(num>=2*nums[i]){
+
+                }else{
+                    return -1;
+                }
+            }
+        }
+
+        for(int i=0;i<nums.size();i++){
+            if(num==nums[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
+};
