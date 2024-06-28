@@ -1,0 +1,42 @@
+class Solution {
+public:
+    bool areSimilar(vector<vector<int>>& mat, int k) {
+
+        int arr[mat.size()][mat[0].size()];
+        for(int i=0;i<mat.size();i++){
+            for(int j=0;j<mat[i].size();j++){
+                arr[i][j]=mat[i][j];
+            }
+        }
+
+        int value;
+        for(int I=0;I<k;I++){
+            for(int i=0;i<mat.size();i++){
+                if(i%2==0){
+                    value=arr[i][0];
+                    for(int j=0;j<mat[i].size()-1;j++){
+                        arr[i][j]=arr[i][j+1];
+                    }
+                    arr[i][mat[i].size()-1]=value;
+                }
+
+                if(i%2!=0){
+                    value=arr[i][mat[i].size()-1];
+                    for(int j=mat[i].size()-1;j>0;j--){
+                        arr[i][j]=arr[i][j-1];
+                    }
+                    arr[i][0]=value;
+                }
+            }
+        }
+
+        for(int i=0;i<mat.size();i++){
+            for(int j=0;j<mat[i].size();j++){
+                if(arr[i][j]!=mat[i][j]){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+};
