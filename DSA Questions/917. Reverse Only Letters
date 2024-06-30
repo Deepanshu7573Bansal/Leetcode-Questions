@@ -1,0 +1,20 @@
+class Solution(object):
+    def reverseOnlyLetters(self, s):
+        s1=[]
+        s2=""
+        index=len(s)-1
+        for i in range(0,len(s)):
+            if (s[index]>='A' and s[index]<='Z') or (s[index]>='a' and s[index]<='z'):
+                s1.append(s[index])
+            index=index-1
+ 
+        index=0;
+        for i in range(0,len(s)):
+            if (s[i]>='A' and s[i]<='Z') or (s[i]>='a' and s[i]<='z'):
+                s2=s2+s1[index];
+                index=index+1
+            else:
+                s2=s2+s[i]
+
+        return s2
+        
