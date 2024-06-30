@@ -1,0 +1,768 @@
+class Solution
+{
+public:
+    int numberOfSpecialChars(string word)
+    {
+        int count = 0, flag = 0;
+
+        for (int i = 0; i < word.length(); i++)
+        {
+            flag = 0;
+            if (word[i] == 'A')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'a')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'a')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'A')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'B')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'b')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'b')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'B')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'C')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'c')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'c')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'C')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'D')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'd')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'd')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'D')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'E')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'e')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'e')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'E')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'F')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'f')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'f')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'F')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'G')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'g')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'g')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'G')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'H')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'h')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'h')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'H')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'I')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'i')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'i')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'I')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'J')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'j')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'j')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'J')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'K')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'k')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'k')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'K')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'L')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'l')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'l')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'L')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'M')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'm')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'm')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'M')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'N')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'n')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'n')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'N')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'O')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'o')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'o')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'O')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'P')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'p')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'p')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'P')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'Q')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'q')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'q')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'Q')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'R')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'r')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'r')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'R')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'S')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 's')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 's')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'S')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'T')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 't')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 't')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'T')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'U')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'u')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'u')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'U')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'V')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'v')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'v')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'V')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'W')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'w')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'w')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'W')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'X')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'x')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'x')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'X')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'Y')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'y')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'y')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'Y')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+            else if (word[i] == 'Z')
+            {
+                word[i] = '-';
+                for (int j = 0; j < i; j++)
+                {
+                    if (word[j] == 'z')
+                    {
+                        flag = 1;
+                        word[j] = '-';
+                    }
+                }
+                for (int j = i + 1; j < word.length(); j++)
+                {
+                    if (word[j] == 'z')
+                    {
+                        flag = 0;
+                        word[j] = '-';
+                    }
+                    if (word[j] == 'Z')
+                    {
+                        word[j] = '-';
+                    }
+                }
+                if (flag == 1)
+                {
+                    count++;
+                    flag = 0;
+                }
+            }
+        }
+        return count;
+    }
+};
