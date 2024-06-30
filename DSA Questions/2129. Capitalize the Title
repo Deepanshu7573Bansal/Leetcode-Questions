@@ -1,0 +1,42 @@
+class Solution {
+public:
+    string capitalizeTitle(string title) {
+        string str="";
+        vector<string>v;
+        int index=0;
+        for(int i=0;i<title.length();i++){
+            title[i]=tolower(title[i]);
+        }
+
+        for(int i=0;i<title.length();i++){
+            if(title[i]==' '){
+                if(str.length()>2){
+                    str[0]=toupper(str[0]);
+                    v.push_back(str);
+                    str="";
+                }else{
+                    v.push_back(str);
+                    str="";
+                }
+            }else{
+                str=str+title[i];
+            }
+        }
+
+        if(str.length()>2){
+            str[0]=toupper(str[0]);
+            v.push_back(str);
+        }else{
+            v.push_back(str);
+        }
+
+        for(int i=0;i<v.size();i++){
+            for(int j=0;j<v[i].size();j++){
+                title[index]=v[i][j];
+                index++;
+            }
+            index++;
+        }
+        return title;
+    }
+};
