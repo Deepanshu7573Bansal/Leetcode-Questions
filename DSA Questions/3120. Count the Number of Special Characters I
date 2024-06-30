@@ -1,0 +1,375 @@
+class Solution {
+public:
+    int numberOfSpecialChars(string word) {
+        int count=0;
+
+        for(int i=0;i<word.length();i++){
+           if(word[i]=='a'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='A'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='a' || word[k]=='A'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='b'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='B'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='b' || word[k]=='B'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+                }
+            }else if(word[i]=='c'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='C'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='c' || word[k]=='C'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='d'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='D'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='d' || word[k]=='D'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='e'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='E'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='e' || word[k]=='E'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='f'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='F'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='f' || word[k]=='F'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='g'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='G'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='g' || word[k]=='G'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='h'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='H'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='h' || word[k]=='H'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='i'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='I'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='i' || word[k]=='I'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='j'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='J'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='j' || word[k]=='J'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='k'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='K'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='k' || word[k]=='K'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='l'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='L'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='l' || word[k]=='L'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='m'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='M'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='m' || word[k]=='M'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='n'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='N'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='n' || word[k]=='N'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='o'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='O'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='o' || word[k]=='O'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='p'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='P'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='p' || word[k]=='P'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='q'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='Q'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='q' || word[k]=='Q'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='r'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='R'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='r' || word[k]=='R'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='s'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='S'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='s' || word[k]=='S'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='t'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='T'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='t' || word[k]=='T'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='u'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='U'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='u' || word[k]=='U'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='v'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='V'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='v' || word[k]=='V'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='w'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='W'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='w' || word[k]=='W'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='x'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='X'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='x' || word[k]=='X'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='y'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='Y'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='y' || word[k]=='Y'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }else if(word[i]=='z'){
+             for(int j=0;j<word.length();j++){
+                if(word[j]=='Z'){
+                    count++;
+                    word[i]='-';
+                    word[j]='-';
+                    for(int k=0;k<word.length();k++){
+                        if(word[k]=='z' || word[k]=='Z'){
+                            word[k]='-';
+                        }
+                    }
+                    break;
+                }
+            }
+           }
+        }
+        return count;
+    }
+};
