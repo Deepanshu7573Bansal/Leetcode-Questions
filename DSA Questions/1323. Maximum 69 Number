@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int maximum69Number (int num) {
+        vector<int>v;
+        string s=to_string(num),s1;
+        int value;
+        s1=s;
+        for(int i=0;i<s.length();i++){
+            if(s[i]=='6'){
+                s1[i]='9';
+                value=stoi(s1);
+                v.push_back(value);
+            }else{
+                s1[i]='6';
+                value=stoi(s1);
+                v.push_back(value);
+            }
+            s1=s;
+        }
+        sort(v.begin(),v.end());
+        if(v[v.size()-1]<num){
+            return num;
+        }
+        return v[v.size()-1];
+    }
+};
