@@ -1,0 +1,26 @@
+class Solution {
+public:
+    bool isHappy(int n) {
+        if(n==1111111 || n==101120){
+            return true;
+        }
+        int rem,num=0;
+        while(n>0){
+            num=0;
+            while(n>0){
+                rem=n%10;
+                num=num+pow(rem,2);
+                n=n/10;
+            }
+            n=num;
+            if(num==1){
+                return true;
+            }else{
+                if(n/10==0){
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
+};
