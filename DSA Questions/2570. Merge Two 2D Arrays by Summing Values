@@ -1,0 +1,50 @@
+class Solution {
+public:
+    vector<vector<int>> mergeArrays(vector<vector<int>>& nums1, vector<vector<int>>& nums2) {
+        vector<vector<int>>v1;
+        vector<int>v;
+        int id=-1,num=0,flag=0;
+        for(int i=0;i<nums1.size();i++){
+            if(id<nums1[i][0]){
+                id=nums1[i][0];
+            }
+        }
+        for(int i=0;i<nums2.size();i++){
+            if(id<nums2[i][0]){
+                id=nums2[i][0];
+            }
+        }
+
+        for(int i=1;i<=id;i++){
+            num=0;
+            flag=0;
+            for(int j=0;j<nums1.size();j++){
+                if(i==nums1[j][0]){
+                    flag=1;
+                    num=num+nums1[j][1];
+                }
+                if(i<nums1[j][0]){
+                    break;
+                }
+            }
+            for(int j=0;j<nums2.size();j++){
+                if(i==nums2[j][0]){
+                    flag=1;
+                    num=num+nums2[j][1];
+                }
+                if(i<nums2[j][0]){
+                    break;
+                }
+            }
+            if(flag==1){
+                v.push_back(i);
+                v.push_back(num);
+                v1.push_back(v);
+                while(!v.empty()){
+                    v.pop_back();
+                }
+            }
+        }
+        return v1;
+    }
+};
