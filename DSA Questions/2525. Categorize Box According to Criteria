@@ -1,0 +1,30 @@
+/**
+ * @param {number} length
+ * @param {number} width
+ * @param {number} height
+ * @param {number} mass
+ * @return {string}
+ */
+var categorizeBox = function(length, width, height, mass) {
+        var num=eval(length*width*height);
+        var power=1000000000;
+        var str="1",str1="1";
+
+        if(num>=power || (length>= 10000 || height>=10000 || width>=10000)){
+            str="Bulky";
+        }
+        if(mass>=100){
+            str1="Heavy";
+        }
+
+        if(str!="1" && str1!="1"){
+            return "Both";
+        }else if(str!="1" && str1=="1"){
+            return "Bulky";
+        }else if(str=="1" && str1!="1"){
+            return "Heavy";
+        }else if(str=="1" && str1=="1"){
+            return "Neither";
+        }
+        return "str";
+};
