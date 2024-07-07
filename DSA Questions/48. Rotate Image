@@ -1,0 +1,26 @@
+class Solution {
+public:
+    void rotate(vector<vector<int>>& matrix) {
+        int arr[matrix.size()][matrix.size()],index=0;
+
+        for(int i=0;i<matrix.size();i++){
+            index=0;
+            for(int j=matrix.size()-1;j>=0;j--){
+                arr[i][index]=matrix[j][i];
+                index++;
+            }
+        }
+
+        for(int i=0;i<matrix.size();i++){
+            for(int j=0;j<matrix.size();j++){
+               cout<<arr[i][j]<<" ";
+            }
+            cout<<"\n";
+        }
+        for(int i=0;i<matrix.size();i++){
+            for(int j=0;j<matrix.size();j++){
+                matrix[i][j]=arr[i][j];
+            }
+        }
+    }
+};
