@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int totalMoney(int n) {
+        vector<int>v;
+        int day=1,money=0,monday=0,sum=0;
+        for(int i=0;i<n;i++){
+            if(day<7){
+                money=money+1;
+                v.push_back(money);
+                cout<<money<<'\n';
+                day++;
+            }else{
+                if(day==7){
+                    money=money+1;
+                    v.push_back(money);
+                    monday=monday+1;
+                    money=monday;
+                    day=1;
+                }
+            }
+        }
+
+        for(int i=0;i<v.size();i++){
+            sum=sum+v[i];
+        }
+        return sum;
+    }
+};
