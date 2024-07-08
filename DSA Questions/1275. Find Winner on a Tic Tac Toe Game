@@ -1,0 +1,74 @@
+class Solution {
+public:
+    string tictactoe(vector<vector<int>>& moves) {
+        vector<vector<int>>v;
+        vector<int>v1;
+        int num=0,count=0;
+
+        for(int i=0;i<3;i++){
+            for(int j=0;j<3;j++){
+                v1.push_back(-1);
+            }
+            v.push_back(v1);
+            while(!v1.empty()){
+                v1.pop_back();
+            }
+        }
+        for(int i=0;i<moves.size();i++){
+                if(num%2==0){
+                    v[moves[i][0]][moves[i][1]]=1;
+                }else{
+                    v[moves[i][0]][moves[i][1]]=2;
+                }
+                num++;
+        }
+
+        if(v[0][0]==1 && v[0][1]==1 && v[0][2]==1){
+            return "A";
+        }else if(v[1][0]==1 && v[1][1]==1 && v[1][2]==1){
+            return "A";
+        }else if(v[2][0]==1 && v[2][1]==1 && v[2][2]==1){
+            return "A";
+        }else if(v[0][0]==1 && v[1][1]==1 && v[2][2]==1){
+            return "A";
+        }else if(v[0][2]==1 && v[1][1]==1 && v[2][0]==1){
+            return "A";
+        }else if(v[0][0]==1 && v[1][0]==1 && v[2][0]==1){
+            return "A";
+        }else if(v[0][1]==1 && v[1][1]==1 && v[2][1]==1){
+            return "A";
+        }else if(v[0][2]==1 && v[1][2]==1 && v[2][2]==1){
+            return "A";
+        }else  if(v[0][0]==2 && v[0][1]==2 && v[0][2]==2){
+            return "B";
+        }else if(v[1][0]==2 && v[1][1]==2 && v[1][2]==2){
+            return "B";
+        }else if(v[2][0]==2 && v[2][1]==2 && v[2][2]==2){
+            return "B";
+        }else if(v[0][0]==2 && v[1][1]==2 && v[2][2]==2){
+            return "B";
+        }else if(v[0][2]==2 && v[1][1]==2 && v[2][0]==2){
+            return "B";
+        }else if(v[0][0]==2 && v[1][0]==2 && v[2][0]==2){
+            return "B";
+        }else if(v[0][1]==2 && v[1][1]==2 && v[2][1]==2){
+            return "B";
+        }else if(v[0][2]==2 && v[1][2]==2 && v[2][2]==2){
+            return "B";
+        }else{
+            for(int i=0;i<3;i++){
+                for(int j=0;j<3;j++){
+                    if(v[i][j]==-1){
+                        count++;
+                    }
+                }
+            }
+            if(count>0){
+                return "Pending";
+            }else{
+                return "Draw";
+            }
+        }
+        return "pending";
+    }
+};
