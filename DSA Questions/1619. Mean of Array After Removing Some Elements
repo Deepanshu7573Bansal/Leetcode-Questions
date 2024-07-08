@@ -1,0 +1,14 @@
+class Solution {
+public:
+    double trimMean(vector<int>& arr) {
+        sort(arr.begin(),arr.end());
+        int per=0.05*arr.size(),count=0;
+        double mean=0.0;
+        for(int i=per;i<(arr.size()-per);i++){
+            mean=mean+arr[i];
+            count++;
+        }
+        mean=mean/count;
+        return mean;
+    }
+};
