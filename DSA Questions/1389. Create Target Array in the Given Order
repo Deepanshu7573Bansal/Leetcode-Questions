@@ -1,0 +1,28 @@
+class Solution {
+public:
+    vector<int> createTargetArray(vector<int>& nums, vector<int>& index) {
+        int arr[nums.size()];
+        vector<int>v;
+
+        for(int i=0;i<nums.size();i++){
+            arr[i]=-99;
+        }
+
+        for(int i=0;i<nums.size();i++){
+            if(arr[index[i]]==-99){
+                arr[index[i]]=nums[i];
+            }else{
+                for(int j=nums.size()-1;j>index[i];j--){
+                    arr[j]=arr[j-1];
+                }
+                arr[index[i]]=nums[i];
+            }
+        }
+
+        for(int i=0;i<nums.size();i++){
+            v.push_back(arr[i]);
+        }
+
+        return v;
+    }
+};
