@@ -1,0 +1,43 @@
+class Solution {
+public:
+    int longestSubarray(vector<int>& nums) {
+        int max=0;
+        for(int i=0;i<nums.size();i++){
+            if(max<nums[i]){
+                max=nums[i];
+            }
+        }
+
+        int count=0;
+        int ans=1;
+        for(int i=0;i<nums.size();i++){
+            if(max==nums[i]){
+                count++;
+            }else{
+                count=0;
+            }
+            if(ans<count){
+                ans=count;
+                continue;
+            }
+        }
+        return ans;
+    }
+};
+
+// int max=-999,bitwiseand,length=-999;
+// for(int i=0;i<nums.size();i++){
+//     bitwiseand=nums[i];
+//     for(int j=i;j<nums.size();j++){
+//         bitwiseand=bitwiseand&nums[j];
+//         if(max<=bitwiseand){
+//             if(max==bitwiseand && length>((j-i)+1)){
+//                 continue;
+//             }else{
+//                 max=bitwiseand;
+//                 length=(j-i)+1;
+//             }
+//         }
+//     }
+// }
+// return length;
