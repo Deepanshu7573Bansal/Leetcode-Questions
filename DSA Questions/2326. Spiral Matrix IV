@@ -1,0 +1,67 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public int[][] spiralMatrix(int m, int n, ListNode head) {
+        ListNode temp=head;
+        int[][] matrix=new int[m][n];
+        int[][] bool=new int[m][n];
+        for(int i=0;i<m;i++){
+            Arrays.fill(matrix[i],-1);
+        }
+
+        int value=1;
+        int row1=0;
+        int firstrow=0;
+        int firstcolumn=n-1;
+        int secondrow=m-1;
+        int secondcolumn=0;
+
+        while((firstrow<m && secondcolumn<n) && temp!=null){
+            for(int i=row1;i<=firstcolumn;i++){
+                if(bool[firstrow][i]==0 && temp!=null){
+                    matrix[firstrow][i]=temp.val;
+                    temp=temp.next;
+                    bool[firstrow][i]=1;
+                }
+            }
+            firstrow++;
+
+            for(int i=firstrow;i<secondrow;i++){
+                if(bool[i][firstcolumn]==0 && temp!=null){
+                    matrix[i][firstcolumn]=temp.val;
+                    temp=temp.next;
+                    bool[i][firstcolumn]=1;
+                }
+            }
+
+            for(int i=firstcolumn;i>=row1;i--){
+                if(bool[secondrow][i]==0 && temp!=null){
+                    matrix[secondrow][i]=temp.val;
+                    temp=temp.next;
+                    bool[secondrow][i]=1;
+                }
+            }
+            firstcolumn--;
+            secondrow--;
+
+            for(int i=secondrow;i>row1;i--){
+                if(bool[i][secondcolumn]==0 && temp!=null){
+                    matrix[i][secondcolumn]=temp.val;
+                    temp=temp.next;
+                    bool[i][secondcolumn]=1;
+                }
+            }
+            secondcolumn++;
+            row1++;
+        }
+        return matrix;
+    }
+}
