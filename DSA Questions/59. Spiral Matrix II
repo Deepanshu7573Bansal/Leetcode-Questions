@@ -1,0 +1,52 @@
+class Solution {
+    public int[][] generateMatrix(int n) {
+        int[][] matrix=new int[n][n];
+        int[][] bool=new int[n][n];
+        int value=1;
+        int row1=0;
+        int firstrow=0;
+        int firstcolumn=n-1;
+        int secondrow=n-1;
+        int secondcolumn=0;
+
+        while(firstrow<n && secondcolumn<n){
+            for(int i=row1;i<=firstcolumn;i++){
+                if(bool[firstrow][i]==0){
+                    matrix[firstrow][i]=value;
+                    value++;
+                    bool[firstrow][i]=1;
+                }
+            }
+            firstrow++;
+
+            for(int i=firstrow;i<secondrow;i++){
+                if(bool[i][firstcolumn]==0){
+                    matrix[i][firstcolumn]=value;
+                    value++;
+                    bool[i][firstcolumn]=1;
+                }
+            }
+
+            for(int i=firstcolumn;i>=row1;i--){
+                if(bool[secondrow][i]==0){
+                    matrix[secondrow][i]=value;
+                    value++;
+                    bool[secondrow][i]=1;
+                }
+            }
+            firstcolumn--;
+            secondrow--;
+
+            for(int i=secondrow;i>row1;i--){
+                if(bool[i][secondcolumn]==0){
+                    matrix[i][secondcolumn]=value;
+                    value++;
+                    bool[i][secondcolumn]=1;
+                }
+            }
+            secondcolumn++;
+            row1++;
+        }
+        return matrix;
+    }
+}
