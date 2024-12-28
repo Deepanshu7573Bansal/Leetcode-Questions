@@ -1,0 +1,19 @@
+class Solution {
+    public String[] sortPeople(String[] names, int[] heights) {
+        String[] result=new String[names.length];
+        int max=-1,index=-1,num=0;
+        for(int i=0;i<heights.length;i++){
+            max=-1;
+            for(int j=0;j<heights.length;j++){
+                if(max<heights[j]){
+                    max=heights[j];
+                    index=j;
+                }
+            }
+            heights[index]=-1;
+            result[num]=names[index];
+            num++;
+        }
+        return result;
+    }
+}
