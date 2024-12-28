@@ -1,0 +1,66 @@
+class Solution {
+    public String sortSentence(String s) {
+        String[] str=new String[9];
+        String st="";
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)==' '){
+                continue;
+            }
+            if(s.charAt(i)=='1'){
+                str[0]=st;
+                st="";
+                continue;
+            }
+            if(s.charAt(i)=='2'){
+                str[1]=st;
+                st="";
+                continue;
+            }
+            if(s.charAt(i)=='3'){
+                str[2]=st;
+                st="";
+                continue;
+            }
+            if(s.charAt(i)=='4'){
+                str[3]=st;
+                st="";
+                continue;
+            }
+            if(s.charAt(i)=='5'){
+                str[4]=st;
+                st="";
+                continue;
+            }
+            if(s.charAt(i)=='6'){
+                str[5]=st;
+                st="";
+                continue;
+            }
+            if(s.charAt(i)=='7'){
+                str[6]=st;
+                st="";
+                continue;
+            }
+            if(s.charAt(i)=='8'){
+                str[7]=st;
+                st="";
+                continue;
+            }
+            if(s.charAt(i)=='9'){
+                str[8]=st;
+                st="";
+                continue;
+            }
+            st=st+s.charAt(i);
+        }
+
+        String result="";
+        for(int i=0;i<9;i++){
+            if(str[i]!=null){
+                result=result+str[i]+" ";
+            }
+        }
+        result=result.substring(0,result.length()-1);
+        return result;
+    }
+}
