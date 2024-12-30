@@ -1,0 +1,77 @@
+class Solution {
+    public int hammingDistance(int x, int y) {
+        String X="";
+        String Y="";
+        while(x>0){
+            if(x%2==0){
+                X=X+'0';
+            }
+            if(x%2==1){
+                X=X+'1';
+            }
+            x=x/2;
+        }
+        while(y>0){
+            if(y%2==0){
+                Y=Y+'0';
+            }
+            if(y%2==1){
+                Y=Y+'1';
+            }
+            y=y/2;
+        }
+        String str1="";
+        String str2="";
+        for(int i=X.length()-1;i>=0;i--){
+            str1=str1+X.charAt(i);
+        }
+        for(int i=Y.length()-1;i>=0;i--){
+            str2=str2+Y.charAt(i);
+        }
+        
+        int index,result=0;
+        if(str1.length()>str2.length()){
+            index=str1.length()-str2.length();
+            for(int i=str2.length()-1;i>=0;i--){
+                if(str2.charAt(i)=='1' && str1.charAt(index+i)=='0'){
+                    result++;
+                }
+                if(str2.charAt(i)=='0' && str1.charAt(index+i)=='1'){
+                    result++;
+                }
+            }
+            index=str1.length()-str2.length()-1;
+            for(int i=index;i>=0;i--){
+                if(str1.charAt(i)=='1'){
+                    result++;
+                }
+            }
+        }else if(str1.length()<str2.length()){
+            index=str2.length()-str1.length();
+            for(int i=str1.length()-1;i>=0;i--){
+                if(str2.charAt(index+i)=='1' && str1.charAt(i)=='0'){
+                    result++;
+                }
+                if(str2.charAt(index+i)=='0' && str1.charAt(i)=='1'){
+                    result++;
+                }
+            }
+            index=str2.length()-str1.length()-1;
+            for(int i=index;i>=0;i--){
+                if(str2.charAt(i)=='1'){
+                    result++;
+                }
+            }
+        }else if(str1.length()==str2.length()){
+            for(int i=str2.length()-1;i>=0;i--){
+                if(str2.charAt(i)=='1' && str1.charAt(i)=='0'){
+                    result++;
+                }
+                if(str2.charAt(i)=='0' && str1.charAt(i)=='1'){
+                    result++;
+                }
+            }
+        }
+        return result;
+    }
+}
