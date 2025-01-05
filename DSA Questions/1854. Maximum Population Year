@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int maximumPopulation(vector<vector<int>>& logs) {
+        vector<int>v(101);
+        for_each(v.begin()+0,v.end(),[](int& x){x=0;});
+        for(int i=0;i<logs.size();i++){
+            int index1=logs[i][0]-1950;
+            int index2=logs[i][1]-1950;
+            for_each(v.begin()+index1,v.begin()+index2,[](int& x){x+=1;});
+        }
+        int max=0,result;
+        for(int i=0;i<v.size();i++){
+            if(v[i]!=0 && max<v[i]){
+                max=v[i];
+                result=i+1950;
+            }
+        }
+        return result;
+    }
+};
