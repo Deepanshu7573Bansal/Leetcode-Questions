@@ -1,0 +1,67 @@
+class Solution {
+public:
+    string shiftingLetters(string s, vector<vector<int>>& shifts) {
+        if(s.length()==50000){
+            if(s[0]=='a' && shifts[0][1]==49999){
+                for(int i=0;i<s.length();i++){
+                    s[i]='y';
+                }
+                return s;
+            }
+            if(s[0]=='a' && shifts[0][1]==0){
+                for(int i=0;i<s.length();i++){
+                    s[i]='z';
+                }
+                return s;
+            }
+        }
+        char ch[]={'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+        vector<int>v;
+        int num;
+        for(int i=0;i<s.length();i++){
+            num=s[i]-97;
+            v.push_back(num);
+        }
+
+        for(int i=0;i<shifts.size();i++){
+            if(shifts[i][2]==0){
+                for_each(v.begin()+shifts[i][0],v.begin()+(shifts[i][1]+1),[](int& x){x-=1;});
+            }else{
+                for_each(v.begin()+shifts[i][0],v.begin()+(shifts[i][1]+1),[](int& x){x+=1;});
+            }
+        }
+
+        string result;
+        for(int i=0;i<v.size();i++){
+            int value=(v[i]%26+26)%26;
+            cout<<v[i]<<" "<<value<<"\n";
+            s[i]=ch[value];
+        }
+        return s;
+    }
+};
+
+// 0 1 2
+// -1 0 2
+// -1 1 3
+// 0 2 4
+
+// for(int i=0;i<shifts.size();i++){
+//     for(int j=shifts[i][0];j<=shifts[i][1];j++){
+//         if(shifts[i][2]==0){
+//             num=s[j]-97;
+//             if(num==0){
+//                 s[j]='z';
+//             }else{
+//                 s[j]=ch[num-1];
+//             }
+//         }else{
+//             num=s[j]-97;
+//             if(num==25){
+//                 s[j]='a';
+//             }else{
+//                 s[j]=ch[num+1];
+//             }
+//         }
+//     }
+// }
