@@ -1,0 +1,42 @@
+class Solution {
+    public int maxProduct(int[] nums) {
+        for(int i=1;i<nums.length;i++){
+            if(nums[i-1]!=0){
+                nums[i]=nums[i-1]*nums[i];
+            }
+        }
+
+        int flag=0,value=1,result=-200001;
+        for(int i=0;i<nums.length;i++){
+            if(i>0){
+                value=nums[i-1];
+                if(value==0){
+                    flag=1;
+                    value=1;
+                }
+            }
+            for(int j=i;j<nums.length;j++){
+                if(nums[j]==0){
+                    flag=1;
+                    break;
+                }
+                if(value!=0 && (nums[j]/value)>result){
+                    result=(nums[j]/value);
+                }
+            }
+        }
+        if(result<0 && flag==1){
+            return 0;
+        }
+        return result;
+    }
+}
+
+Important Test Cases:-
+1. nums= [2,3,-2,4]
+2. nums= [-2,0,-1]
+3. nums= [-2]
+4. nums= [0,2]
+5. nums= [-1,0,-2,2]
+6. nums= [0,-2,-3]
+7. nums= [1,0,-5,2,3,-8,-9]
