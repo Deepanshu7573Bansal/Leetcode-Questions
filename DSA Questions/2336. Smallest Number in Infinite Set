@@ -1,0 +1,36 @@
+class SmallestInfiniteSet {
+public:
+    vector<int>v;
+    SmallestInfiniteSet() {
+        for(int i=1;i<=1000;i++){
+            v.push_back(i)
+        }
+    }
+    
+    int popSmallest() {
+        sort(v.begin(),v.end());
+        int value=v[0];
+        v.erase(v.begin()+0);
+        return value;
+    }
+    
+    void addBack(int num) {
+        sort(v.begin(),v.end());
+        for(int i=0;i<v.size();i++){
+            if(v[i]==num){
+                return;
+            }
+            if(v[i]>num){
+                break;
+            }
+        }
+        v.push_back(num);
+    }
+};
+
+/**
+ * Your SmallestInfiniteSet object will be instantiated and called as such:
+ * SmallestInfiniteSet* obj = new SmallestInfiniteSet();
+ * int param_1 = obj->popSmallest();
+ * obj->addBack(num);
+ */
