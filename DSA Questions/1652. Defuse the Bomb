@@ -1,0 +1,42 @@
+class Solution {
+public:
+    vector<int> decrypt(vector<int>& code, int k) {
+        vector<int>result;
+        int index=0;
+        int sum=0;
+        int length=code.size();
+        if(k==0){
+            for(int i=0;i<code.size();i++){
+                result.push_back(0);
+            }
+        }else if(k<0){
+            k=k*(-1);
+            for(int i=0;i<code.size();i++){
+                sum=0;
+                index=i;
+                for(int j=0;j<k;j++){
+                    index=index-1;
+                    if(index<0){
+                        index=index+length;
+                    }
+                    sum=sum+code[index];
+                }
+                result.push_back(sum);
+            }
+        }else if(k>0){
+            for(int i=0;i<code.size();i++){
+                sum=0;
+                index=i;
+                for(int j=0;j<k;j++){
+                    index=index+1;
+                    if(index>=length){
+                        index=index-length;
+                    }
+                    sum=sum+code[index];
+                }
+                result.push_back(sum);
+            }
+        }
+        return result;
+    }
+};
