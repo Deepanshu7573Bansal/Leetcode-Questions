@@ -1,0 +1,23 @@
+class Solution {
+public:
+    vector<int> getFinalState(vector<int>& nums, int k, int multiplier) {
+        long long min;
+        int index=-1;
+        for(int i=0;i<k;i++){
+            min=999999999999;
+            index=-1;
+            for(int j=0;j<nums.size();j++){
+                if(min>nums[j]){
+                    min=nums[j];
+                    index=j;
+                }
+            }
+            nums[index]=nums[index]*multiplier;
+            for(int j=0;j<nums.size();j++){
+                cout<<nums[j]<<" ";
+            }
+            cout<<"\n";
+        }
+        return nums;
+    }
+};
