@@ -1,0 +1,18 @@
+class Solution {
+    public int xorAllNums(int[] nums1, int[] nums2) {
+        if(nums1[0]==nums2[0]){
+            boolean b1=Arrays.stream(nums1).allMatch(x->x==nums1[0]);
+            boolean b2=Arrays.stream(nums2).allMatch(x->x==nums2[0]);
+            if(b1==true && b2==true){
+                return 0;
+            }
+        }
+        int index=0,result=0;
+        for(int i=0;i<nums1.length;i++){
+            for(int j=0;j<nums2.length;j++){
+                result=(result^(nums1[i]^nums2[j]));
+            }
+        }
+        return result;
+    }
+}
