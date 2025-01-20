@@ -1,0 +1,39 @@
+class Solution {
+public:
+    bool checkValid(vector<vector<int>>& matrix) {
+        vector<vector<int>>result;
+        vector<int>v;
+        for(int i=0;i<matrix.size();i++){
+            for(int j=0;j<matrix.size();j++){
+                v.push_back(matrix[j][i]);
+            }
+            result.push_back(v);
+            v.clear();
+        }
+        for(int i=0;i<matrix.size();i++){
+            sort(matrix[i].begin(),matrix[i].end());
+        }
+        int num=1;
+        for(int i=0;i<matrix.size();i++){
+            for(int j=0;j<matrix.size();j++){
+                if(num!=matrix[j][i]){
+                    return false;
+                }
+            }
+            num++;
+        }
+        for(int i=0;i<result.size();i++){
+            sort(result[i].begin(),result[i].end());
+        }
+        num=1;
+        for(int i=0;i<result.size();i++){
+            for(int j=0;j<result.size();j++){
+                if(num!=result[j][i]){
+                    return false;
+                }
+            }
+            num++;
+        }
+        return true;
+    }
+};
