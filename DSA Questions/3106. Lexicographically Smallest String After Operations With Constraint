@@ -1,0 +1,31 @@
+class Solution {
+    public String getSmallestString(String s, int k) {
+        if(k==0){
+            return s;
+        }
+        String result="";
+        for(int i=0;i<s.length();i++){
+            char ch=s.charAt(i);
+            if(k>0 && ch!='a'){
+                if(('z'-ch+1)<=(ch-'a') && ('z'-ch+1)<=k){
+                    k=k-('z'-ch+1);
+                    System.out.print(k+" ");
+                    result=result+'a';
+                }else if(('z'-ch+1)>=(ch-'a') && (ch-'a')<=k){
+                    k=k-(ch-'a');
+                    result=result+'a';
+                    System.out.print(k+" ");
+                }else{
+                    int num=ch-k;
+                    ch=(char)num;
+                    result=result+ch;
+                    System.out.print(k+" ");
+                    k=0;
+                }
+                continue;
+            }
+            result=result+ch;
+        }
+        return result;
+    }
+}
