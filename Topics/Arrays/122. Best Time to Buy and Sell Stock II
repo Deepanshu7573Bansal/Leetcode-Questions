@@ -1,0 +1,32 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int min=prices[0],profit=0,flag=0,result=0;
+        ArrayList<Integer>arr=new ArrayList<Integer>();
+        for(int i=1;i<prices.length;i++){
+            if(min>prices[i]){
+                flag=1;
+                min=prices[i];
+            }else{
+                if(flag==1){
+                    arr.add(prices[i]-min);
+                    flag=0;
+                    continue;
+                }
+                if(arr.size()==0){
+                    arr.add(prices[i]-min);
+                    continue;
+                }
+                if((prices[i]-min)>arr.get(arr.size()-1)){
+                    arr.set(arr.size()-1,(prices[i]-min));
+                }else{
+                    min=prices[i];
+                    flag=1;
+                }
+            }
+        }
+        for(int i=0;i<arr.size();i++){
+            result=result+arr.get(i);
+        }
+        return result;
+    }
+}
