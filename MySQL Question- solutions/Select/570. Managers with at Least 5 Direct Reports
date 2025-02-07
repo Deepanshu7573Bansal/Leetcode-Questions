@@ -1,0 +1,5 @@
+Select e.name
+FROM Employee as e
+JOIN
+(SELECT managerId FROM Employee GROUP BY managerId Having COUNT(managerId)>=5) AS t
+ON t.managerId=e.id AND t.managerId IS NOT NULL;
