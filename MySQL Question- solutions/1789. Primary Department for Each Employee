@@ -1,0 +1,10 @@
+SELECT employee_id,department_id
+FROM (SELECT *
+FROM Employee
+WHERE primary_flag='Y') AS t
+GROUP BY employee_id
+UNION
+SELECT employee_id,department_id
+From Employee
+GROUP BY employee_id
+HAVING COUNT(employee_id)=1
